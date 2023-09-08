@@ -13,8 +13,6 @@ jobs:
     steps:
 
     - uses: actions/checkout@v3
-      with:
-        ref: adf_publish
 # Installs Node and the npm packages saved in your package.json file in the build
     - name: Setup Node.js environment
       uses: actions/setup-node@v3.4.1
@@ -47,7 +45,7 @@ jobs:
       with:
         resourceGroupName: adf-gh
         dataFactoryName: destination-adf
-        armTemplateFile: source-adf/ARMTemplateForFactory.json
+        armTemplateFile: ARMTemplateForFactory.json
         # armTemplateParametersFile: ARMTemplateParametersForFactory.json # (9) ARM template parameters file name ARMTemplateParametersForFactory.json
         # additionalParameters: 'factoryName=destination-adf'# (10) Parameters which will be replaced in the ARM template. Expected format 'key1=value key2=value keyN=value'. At the minimum here you should provide the target ADF name parameter. Check the ARMTemplateParametersForFactory.json file for all the parameters that are expected in your scenario
        
